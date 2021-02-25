@@ -47,14 +47,15 @@ def buildlib(bldroot, installpath, case):
     gmake_args = get_standard_makefile_args(case, shared_lib=True)
     comp_interface = case.get_value("COMP_INTERFACE")
     cimeroot = case.get_value("CIMEROOT")
+    srcroot = case.get_value("SRCROOT")
     caseroot = case.get_value("CASEROOT")
     libroot = case.get_value("LIBROOT")
 
     filepath = [os.path.join(caseroot,"SourceMods","src.share"),
-                os.path.join(cimeroot,"..","share","science","src"),
-                os.path.join(cimeroot,"..","share","science","src","water_isotopes"),
-                os.path.join(cimeroot,"..","cpl7","mct_shr"),
-                os.path.join(cimeroot,"..","cpl7","components","data_comps_mct","streams")]
+                os.path.join(srcroot,"share","science","src"),
+                os.path.join(srcroot,"share","science","src","water_isotopes"),
+                os.path.join(srcroot,"cpl7","mct_shr"),
+                os.path.join(srcroot,"cpl7","components","data_comps_mct","streams")]
 
     # Append path for driver - currently only values of 'mct' and 'nuopc' are accepted
 
